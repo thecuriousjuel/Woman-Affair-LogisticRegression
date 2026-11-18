@@ -43,7 +43,7 @@ def predict():
 if __name__ == '__main__':
     os.environ.pop("WERKZEUG_SERVER_FD", None)
     os.environ.pop("WERKZEUG_RUN_MAIN", None)
-    port = int(os.environ.get("AFFAIR_PORT", 5106))
+    port = int(os.environ.get("PORT", os.environ.get("AFFAIR_PORT", 5206)))
     host = os.environ.get("HOST", "127.0.0.1")
     print(f"🚀 Woman Affair Classifier running on http://{host}:{port}")
     app.run(host=host, port=port, debug=False, use_reloader=False)
